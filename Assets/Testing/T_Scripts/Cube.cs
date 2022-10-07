@@ -13,9 +13,9 @@ public class Cube : MonoBehaviour
     {
         transform.name = ImproveName(newName);
         
-        if (1 + 1 == 2)
+        if (isRotated)
         {
-            Debug.Log("We're Here!");
+            transform.localEulerAngles = Vector3.one * 45;
         }
     }
 
