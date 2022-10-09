@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey("down"))
         {
-            transform.position += Vector3.back * speed * Time.deltaTime;
+            transform.position -= transform.forward * speed * Time.deltaTime;
             Debug.Log("Move Down");
         }
 
