@@ -8,19 +8,27 @@ public class Player : MonoBehaviour
     public float speed = 3.5f;
     public float rotatingSpeed = 40f;
     public float jumpingForce = 10f;
-    
+    public GameObject bulletPrefab;
+
     private bool canJump = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Instantiate (bulletPrefab);
     }
 
     // Update is called once per frame
     void Update()
     {
         Movement();
+
+        if ()
+        {
+
+        }
+
+
     }
 
     private void Movement()
