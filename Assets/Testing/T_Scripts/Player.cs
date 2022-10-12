@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate (bulletPrefab);
     }
 
     // Update is called once per frame
@@ -23,9 +22,12 @@ public class Player : MonoBehaviour
     {
         Movement();
 
-        if ()
+        if (Input.GetMouseButtonDown (0))
         {
+            GameObject bulletObject = Instantiate (bulletPrefab);
+            Bullet bullet = bulletObject.GetComponent<Bullet>();
 
+            bullet.shootingDirection = Vector3.forward;
         }
 
 
