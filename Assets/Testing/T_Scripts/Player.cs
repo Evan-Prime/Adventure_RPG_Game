@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float rotatingSpeed = 40f;
     public float jumpingForce = 10f;
     public GameObject bulletPrefab;
+    public Transform gun;
 
     private bool canJump = false;
 
@@ -24,10 +25,15 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButtonDown (0))
         {
-            GameObject bulletObject = Instantiate (bulletPrefab);
+            GameObject bulletObject = Instantiate (bulletPrefab, gun);
+            //bulletObject.transform.position = transform.position;
+            //bulletObject.transform.rotation = transform.rotation;
             Bullet bullet = bulletObject.GetComponent<Bullet>();
 
-            bullet.shootingDirection = Vector3.forward;
+            Vector3 shootingDirection = transform.forward;
+
+            bullet.shootingDirection = shootingDirection.normalized;
+
         }
 
 
@@ -35,25 +41,25 @@ public class Player : MonoBehaviour
 
     private void Movement()
     {
-        if (Input.GetKey("right"))
+        if (Input.GetKey("right") || Input.GetKey("d"))
         {
             transform.RotateAround(transform.position, Vector3.up, rotatingSpeed * Time.deltaTime);
             Debug.Log("Turn Right");
         }
 
-        if (Input.GetKey("left"))
+        if (Input.GetKey("left") || Input.GetKey("a"))
         {
             transform.RotateAround(transform.position, Vector3.up, -rotatingSpeed * Time.deltaTime);
-            Debug.Log("Move Left");
+            Debug.Log("Turn Left");
         }
 
-        if (Input.GetKey("up"))
+        if (Input.GetKey("up") || Input.GetKey("w"))
         {
             transform.position += transform.forward * speed * Time.deltaTime;
             Debug.Log("Move Up");
         }
 
-        if (Input.GetKey("down"))
+        if (Input.GetKey("down") || Input.GetKey("s"))
         {
             transform.position -= transform.forward * speed * Time.deltaTime;
             Debug.Log("Move Down");

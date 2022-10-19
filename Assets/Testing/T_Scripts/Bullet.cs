@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
 
     public float shootingForce = 10f;
     public Vector3 shootingDirection;
+
+    public float lifetime = 3f;
     
     // Start is called before the first frame update
     void Start()
@@ -14,9 +16,18 @@ public class Bullet : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(shootingDirection * shootingForce);
     }
 
+    private void Awake()
+    {
+        gameObject.transform.parent = null;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        lifetime -= Time.deltaTime;
+        if (lifetime <= 0)
+        {
+            Destroy (gameObject);
+        }
     }
 }
