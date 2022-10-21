@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -191,6 +191,8 @@ MonoBehaviour:
   movingVelocity: 5
   jumpingVelocity: 5
   sword: {fileID: 1618643477}
+  bow: {fileID: 1822485229}
+  arrowAmount: 15
   bombPrefab: {fileID: 5822957473307045667, guid: c23fdbb9c73ad2044a94d0aa4e1f0e09, type: 3}
   bombAmount: 5
   throwingSpeed: 200
@@ -1227,6 +1229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33100040138093f4aa7805fccb1f2775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 7808160219364988959, guid: ac85d34b00d7066429e8f3a97ae52551, type: 3}
 --- !u!1 &1898383165
 GameObject:
   m_ObjectHideFlags: 0
