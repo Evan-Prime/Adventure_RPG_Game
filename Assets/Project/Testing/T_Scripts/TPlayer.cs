@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class TPlayer : MonoBehaviour
 {
 
     public float speed = 3.5f;
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
             GameObject bulletObject = Instantiate (bulletPrefab, gun);
             //bulletObject.transform.position = transform.position;
             //bulletObject.transform.rotation = transform.rotation;
-            Bullet bullet = bulletObject.GetComponent<Bullet>();
+            TBullet bullet = bulletObject.GetComponent<TBullet>();
 
             Vector3 shootingDirection = transform.forward;
 

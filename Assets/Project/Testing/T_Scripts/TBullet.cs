@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class TBullet : MonoBehaviour
 {
 
     public float shootingForce = 10f;

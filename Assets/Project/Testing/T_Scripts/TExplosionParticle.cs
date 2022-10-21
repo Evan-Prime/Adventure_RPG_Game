@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplosionParticle : MonoBehaviour
+public class TExplosionParticle : MonoBehaviour
 {
 
     public float explosionForce = 150f;
