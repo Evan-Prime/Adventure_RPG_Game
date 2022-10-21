@@ -260,4 +260,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingForce: 2000
   shootingDirection: {x: 0, y: 0, z: 0}
+  explosionPrefab: {fileID: 1699825634758000555, guid: 83f2404d05af153418fca3cf59fc6055, type: 3}
   lifetime: 3
