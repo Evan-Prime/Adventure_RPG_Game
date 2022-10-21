@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Bow : MonoBehaviour
 {
+
+    public GameObject arrowPrefab;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,14 @@ public class Bow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    public void Attack()
+    {
+        GameObject arrowObject = Instantiate(arrowPrefab);
+        arrowObject.transform.position = transform.position + transform.forward;
+        arrowObject.transform.forward = transform.forward;
         
     }
 }

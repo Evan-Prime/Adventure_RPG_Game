@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
 
     [Header("Equipment")]
     public Sword sword;
+    public Bow bow;
+    public int arrowAmount = 15;
     public GameObject bombPrefab;
     public int bombAmount = 5;
     public float throwingSpeed;
@@ -26,6 +28,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bow.gameObject.SetActive(false);
+
         playerRigidbody = GetComponent<Rigidbody> ();
         targetModelRotation = Quaternion.Euler (0, 0, 0);
     }
@@ -111,12 +115,25 @@ public class Player : MonoBehaviour
         // Check equipment interaction.
         if (Input.GetKeyDown("z"))
         {
+            sword.gameObject.SetActive (true);
+            bow.gameObject.SetActive (false);
             sword.Attack ();
         }
 
         if (Input.GetKeyDown("x"))
         {
-            ThrowBomb();
+            sword.gameObject.SetActive (false);
+            bow.gameObject.SetActive (true);
+            if (arrowAmount > 0)
+            {
+                bow.Attack ();
+                arrowAmount--;
+            }
+        }
+
+        if (Input.GetKeyDown("c"))
+        {
+            ThrowBomb ();
         }
     }
 
