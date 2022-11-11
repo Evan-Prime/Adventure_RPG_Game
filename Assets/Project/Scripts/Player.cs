@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
             0
         );
 
-        if (Input.GetKey("right"))
+        if (Input.GetKey("d"))
         {
             playerRigidbody.velocity = new Vector3(
                 movingVelocity,
@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
 
             targetModelRotation = Quaternion.Euler (0, 90, 0);
         }
-        if (Input.GetKey("left"))
+        if (Input.GetKey("a"))
         {
             playerRigidbody.velocity = new Vector3(
                 -movingVelocity,
@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
 
             targetModelRotation = Quaternion.Euler(0, 270, 0);
         }
-        if (Input.GetKey("up"))
+        if (Input.GetKey("w"))
         {
             GetComponent<Rigidbody>().velocity = new Vector3(
                 playerRigidbody.velocity.x,
@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
 
             targetModelRotation = Quaternion.Euler(0, 0, 0);
         }
-        if (Input.GetKey("down"))
+        if (Input.GetKey("s"))
         {
             playerRigidbody.velocity = new Vector3(
                 playerRigidbody.velocity.x,
@@ -113,14 +113,14 @@ public class Player : MonoBehaviour
         }
 
         // Check equipment interaction.
-        if (Input.GetKeyDown("z"))
+        if (Input.GetKeyDown("e"))
         {
             sword.gameObject.SetActive (true);
             bow.gameObject.SetActive (false);
             sword.Attack ();
         }
 
-        if (Input.GetKeyDown("x"))
+        if (Input.GetKeyDown("f"))
         {
             sword.gameObject.SetActive (false);
             bow.gameObject.SetActive (true);
@@ -131,7 +131,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown("c"))
+        if (Input.GetKeyDown("q"))
         {
             ThrowBomb ();
         }
